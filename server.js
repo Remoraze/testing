@@ -9,7 +9,7 @@ const io = socketIo(server);
 
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static('public')); // serve static files (HTML, CSS, JS)
+app.use(express.static('public')); // Serve static files (HTML, CSS, JS)
 
 // Load existing chat messages from file (if any)
 let messages = [];
@@ -18,22 +18,43 @@ if (fs.existsSync('messages.json')) {
 }
 
 io.on('connection', (socket) => {
+  console.log(`New connection: ${socket.id}`);
+
+  // Temporary username for this connection
+  let username = null;
+
+  // Prompt the user to set a username
+  socket.emit('askForUsername');
+
+  // Handle username setting
+  socket.on('setUsername', (newUsername) => {
+    username = newUsername;
+    socket.emit('usernameSet', username);
+    console.log(`User ${socket.id} set their username to: ${username}`);
+  });
+
   // Send all previous messages to the new client
   socket.emit('loadMessages', messages);
 
-  // Listen for new messages
-  socket.on('sendMessage', (message) => {
-    // Generate random name if not already present
-    if (!message.name) {
-      message.name = 'User' + Math.floor(Math.random() * 1000);
+  // Handle incoming messages
+  socket.on('sendMessage', (messageText) => {
+    if (!username) {
+      socket.emit('usernameError', 'You must set a username first!');
+      return;
     }
 
-    // Save the message
+    // Add the message with the username
+    const message = { name: username, text: messageText };
     messages.push(message);
     fs.writeFileSync('messages.json', JSON.stringify(messages, null, 2));
 
     // Broadcast the message to all clients
     io.emit('newMessage', message);
+  });
+
+  // Handle user disconnect
+  socket.on('disconnect', () => {
+    console.log(`User disconnected: ${socket.id}`);
   });
 });
 
