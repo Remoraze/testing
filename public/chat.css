@@ -1,0 +1,209 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: #eef2f7; /* Off-white background */
+    font-family: "Verdana", "Tahoma", sans-serif; /* Classic web fonts */
+    color: #000000; /* Black text */
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #336699; /* Retro blue header */
+    color: #ffffff; /* White text for contrast */
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 3px solid #003366;
+}
+
+#header-left {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    margin-right: 10px;
+}
+
+#app-name {
+    font-size: 20px;
+    text-shadow: 1px 1px 0 #003366;
+}
+
+#header-right .home-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #003366;
+    padding: 6px 12px;
+    border: 2px solid #003366;
+    border-radius: 0; /* Retro look */
+    text-align: center;
+    display: inline-block;
+}
+
+#header-right .home-link:hover {
+    background-color: #ffffff;
+    color: #003366;
+    text-decoration: underline;
+}
+
+/* Username Overlay */
+#username-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #eef2f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#username-box {
+    background-color: #ffffff;
+    border: 2px solid #003366;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    font-family: "Verdana", sans-serif;
+}
+
+#username-box h2 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #003366;
+}
+
+#usernameInput {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666666;
+    font-size: 14px;
+}
+
+#charCount {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666666;
+    text-align: left;
+}
+
+#submitUsername {
+    padding: 8px 12px;
+    background-color: #336699;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #003366;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#submitUsername:hover {
+    background-color: #003366;
+}
+
+/* Chat Container */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 800px;
+    height: 80%;
+    border: 2px solid #003366;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 10px;
+    width: 100%;
+    overflow-y: auto;
+    font-size: 14px;
+    background-color: #eef2f7;
+    border-bottom: 1px solid #003366;
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 12px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #003366;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background-color: #eef2f7;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #666666;
+    background-color: #ffffff;
+    font-size: 13px;
+}
+
+.message.sender {
+    font-weight: bold;
+    color: #003366;
+}
+
+.message.receiver {
+    font-style: italic;
+    color: #666666;
+}
+
+/* Input Bar */
+#message-input {
+    display: flex;
+    padding: 8px;
+    background-color: #eef2f7;
+    width: 100%;
+    border-top: 2px solid #003366;
+}
+
+#messageInput {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #666666;
+    font-size: 14px;
+}
+
+#messageInput:focus {
+    outline: none;
+    border-color: #003366;
+}
+
+#sendButton {
+    padding: 6px 10px;
+    background-color: #336699;
+    color: white;
+    font-size: 14px;
+    border: 1px solid #003366;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+#sendButton:hover {
+    background-color: #003366;
+}

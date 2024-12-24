@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat App</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App - Home</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <div id="chat-container">
-    <div id="chat" class="chat-box"></div>
-    <div id="message-input">
-      <input id="messageInput" type="text" placeholder="Type your message..." />
-      <button id="sendButton">Send</button>
-    </div>
-  </div>
+    <header>
+        <div id="header-left">
+            <div id="logo">
+                <img src="logo.png" alt="logo" width="32" height="32">
+            </div>
+            <div id="app-name">Chat App</div>
+        </div>
+    </header>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="script.js"></script>
+    <main class="home-container">
+        <div class="intro-box">
+            <h2>What is Chat App?</h2>
+            <p>Chat App is a simple chat platform where you can connect and communicate with others in real time. No accounts required — just join and start chatting!</p>
+            <p>Please remember to follow the community rules and be respectful to others.</p>
+        </div>
+
+        <div class="button-container">
+            <a href="/chat.html" class="enter-chat-btn">Enter Chat Room</a>
+        </div>
+    </main>
 </body>
 </html>
