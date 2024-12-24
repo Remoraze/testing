@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antana - Coding Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div id="header-left">
+            <img src="logo.png" alt="logo" width="32" height="32" id="logo">
+            <div id="app-name">Antana - Coding Chat</div>
+        </div>
+        <div id="header-right">
+            <a href="/" class="home-link">← Back to Home</a>
+        </div>
+    </header>
+
+    <!-- Username Overlay -->
+    <div id="username-overlay">
+        <div id="username-box">
+            <h2>Welcome to the Coding Chat Room!</h2>
+            <input type="text" id="usernameInput" placeholder="Enter your username (max 20 chars)">
+            <div id="charCount">Characters left: 20</div>
+            <button id="submitUsername" disabled>Join</button>
+        </div>
+    </div>
+    
+    <!-- Chat Container -->
+    <main id="chat-container">
+        <div class="chat-box" id="chat">
+            <!-- Messages will be dynamically added -->
+        </div>
+        
+        <div id="message-input">
+            <input type="text" id="messageInput" placeholder="Type your message...">
+            <button id="sendButton">Send</button>
+        </div>
+    </main>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

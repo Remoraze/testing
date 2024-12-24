@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat App - Home</title>
+    <title>Antana</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -12,19 +13,44 @@
             <div id="logo">
                 <img src="logo.png" alt="logo" width="32" height="32">
             </div>
-            <div id="app-name">Chat App</div>
+            <div id="app-name">Antana</div>
         </div>
     </header>
 
     <main class="home-container">
         <div class="intro-box">
-            <h2>What is Chat App?</h2>
-            <p>Chat App is a simple chat platform where you can connect and communicate with others in real time. No accounts required — just join and start chatting!</p>
+            <h2>What is Antana?</h2>
+            <p>Antana is a simple chat/forum platform where you can connect and communicate with others in real time. No accounts required — just join and start chatting!</p>
             <p>Please remember to follow the community rules and be respectful to others.</p>
         </div>
 
-        <div class="button-container">
-            <a href="/chat.html" class="enter-chat-btn">Enter Chat Room</a>
+        <div class="rooms-section">
+            <h2>Choose a Chat Room</h2>
+            <div class="rooms-grid">
+                <div class="room-card gaming">
+                    <h3>Gaming</h3>
+                    <p>Chat about your favorite games, share strategies, and find gaming buddies!</p>
+                    <a href="/gaming.html?room=gaming" class="room-btn">Join Gaming</a>
+                </div>
+
+                <div class="room-card general">
+                    <h3>General</h3>
+                    <p>Discuss anything and everything - make new friends!</p>
+                    <a href="/general.html?room=general" class="room-btn">Join General</a>
+                </div>
+
+                <div class="room-card memes">
+                    <h3>Memes</h3>
+                    <p>Share and discuss the latest memes and funny content!</p>
+                    <a href="/memes.html?room=memes" class="room-btn">Join Memes</a>
+                </div>
+
+                <div class="room-card coding">
+                    <h3>Coding</h3>
+                    <p>Discuss programming, share knowledge, and get help with code!</p>
+                    <a href="/coding.html?room=coding" class="room-btn">Join Coding</a>
+                </div>
+            </div>
         </div>
     </main>
 </body>
